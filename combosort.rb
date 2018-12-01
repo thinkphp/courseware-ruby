@@ -8,6 +8,43 @@ class Algorithm
 
       end
 
+      def runCombo()
+
+          gap = @len - 1
+
+          size = @len
+
+          swapped = 0
+
+          shrinkFactor = 1.3
+
+          while gap > 1 or swapped == 1
+
+                swapped = 0
+
+                if gap > 1 
+
+                   gap = (gap / shrinkFactor).to_i
+                  
+                end 
+                
+                0.upto(size-gap) do |i|
+                     
+                      if @arr[i] > @arr[i+gap]                         
+
+                         holder = @arr[i]
+
+                         @arr[i] = @arr[i+gap]
+
+                         @arr[i+gap] = holder
+
+                         swapped = 1  
+                      end
+
+                end   
+          end   
+      end
+
       def runBubble()
 
           size = @len 
@@ -37,6 +74,7 @@ class Algorithm
                  size -= 1   
 
               else
+
                  break 
               end
           end
@@ -65,6 +103,6 @@ L = [-1,-2,-3,9,8,7,6,5,4,3,2,1,0]
 print "Before -> "
 print L
 o = Algorithm.new(L)
-o.runBubble()
+o.runCombo()
 print "\n After -> "
 puts o
