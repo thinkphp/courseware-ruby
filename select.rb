@@ -63,7 +63,6 @@ loop do
      puts "\n"
      puts %q{Please select an option:
 
-
             1. Create people table
             2. Add a person
             3. Look for a person  
