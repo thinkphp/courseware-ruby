@@ -17,6 +17,7 @@ class Primes
                     loop do
 
                          if p.all? {|i| n % i != 0}
+                         	
                             g.yield n
                             p << n 
                          end
@@ -24,7 +25,7 @@ class Primes
                          n += 1
                     end
                     
-          end            
+          end
 
           g.take(@n) 
       end	
