@@ -25,7 +25,20 @@ def toDec n
 	dec
 end	
 
+def toBinRec n
+    if n / 2 > 0
+    	toBinRec n / 2
+    end	
+    print n % 2
+end	
+
 puts "From Decimal To Binar -> "
   toBin 8  
+
 puts "From Binary to Decimal -> "
+
 p toDec 1000
+
+p toBinRec 31
+
+
